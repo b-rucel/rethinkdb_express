@@ -9,10 +9,6 @@ require( 'dotenv' ).config();
 
 const app = express();
 
-app.get( '/', ( request, response, next ) => {
-    response.json( { hello: "world" } );
-} );
-
 app.use( logger( 'dev' ) );
 app.use( bodyParser.urlencoded( {
     extended: false
@@ -20,6 +16,14 @@ app.use( bodyParser.urlencoded( {
 app.use( bodyParser.json() );
 app.use( cors() );
 app.use( helmet() );
+
+
+const connect = require( './lib/connect' );
+const users = require( './routes/users' );
+
+app.use( connect.connect );
+app.use( '/', users );
+app.use( connect.close );
 
 app.use( ( error, request, response, next ) => {
     response.status( error.status || 500 );
