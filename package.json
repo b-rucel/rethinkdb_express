@@ -1,0 +1,21 @@
+{
+    "name": "rethinkdb_express",
+    "version": "0.0.1",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/b-rucel/rethinkdb_express.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/b-rucel/rethinkdb_express/issues"
+    },
+    "homepage": "https://github.com/b-rucel/rethinkdb_express#readme"
+}
